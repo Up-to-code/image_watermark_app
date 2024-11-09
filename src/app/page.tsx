@@ -54,13 +54,13 @@ const ImageWithLogoUpload = () => {
         // Draw main image onto canvas
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        // Draw logo on top
+        // Draw logo on top with opacity
         const logoWidth = 120; // Logo width
         const logoHeight = 120; // Logo height
         const xPos = (canvas.width - logoWidth) / 2;
         const yPos = (canvas.height - logoHeight) / 2;
 
-        ctx.globalAlpha = 0.5; // Set logo opacity
+        ctx.globalAlpha = 0.5; // Set logo opacity (50%)
         ctx.drawImage(logoImg, xPos, yPos, logoWidth, logoHeight);
         setWatermarkedImage(canvas.toDataURL()); // Save the canvas image as base64
 
@@ -127,10 +127,11 @@ const ImageWithLogoUpload = () => {
           />
           {logo && (
             <div className="relative mb-6">
+              {/* Logo preview */}
               <img
                 src={logo}
                 alt="Logo"
-                className="w-24 h-24 object-contain opacity-75"
+                className="w-24 h-24 object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
                 <p className="text-white text-xs font-semibold">شعار تم تحميله</p>
