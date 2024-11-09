@@ -92,9 +92,9 @@ const ImageWithLogoUpload = () => {
         </p>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-8 max-w-screen-lg w-full">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-screen-lg w-full">
         {/* Image Upload */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full lg:w-1/2">
           <input
             type="file"
             accept="image/*"
@@ -116,7 +116,7 @@ const ImageWithLogoUpload = () => {
         </div>
 
         {/* Logo Upload */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full lg:w-1/2">
           <input
             type="file"
             accept="image/*"
@@ -136,40 +136,40 @@ const ImageWithLogoUpload = () => {
             </div>
           )}
         </div>
-
-        {/* Add Logo to Image */}
-        {image && logo && !loading && (
-          <button
-            onClick={addLogoToImage}
-            className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
-          >
-            إضافة الشعار إلى الصورة
-          </button>
-        )}
-        {loading && (
-          <div className="mt-4 flex items-center justify-center">
-            <div className="animate-spin h-8 w-8 border-4 border-t-transparent border-blue-600 rounded-full"></div>
-            <p className="ml-2 text-gray-500">جارٍ المعالجة...</p>
-          </div>
-        )}
-
-        {/* Show Watermarked Image */}
-        {watermarkedImage && !loading && (
-          <div className="mt-8 text-center">
-            <img
-              src={watermarkedImage}
-              alt="Watermarked Image"
-              className="w-96 h-96 object-cover border-4 border-gray-300 rounded-lg shadow-xl mb-6"
-            />
-            <button
-              onClick={downloadImage}
-              className="px-8 py-3 bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300"
-            >
-              تحميل الصورة
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* Add Logo to Image */}
+      {image && logo && !loading && (
+        <button
+          onClick={addLogoToImage}
+          className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 mt-8"
+        >
+          إضافة الشعار إلى الصورة
+        </button>
+      )}
+      {loading && (
+        <div className="mt-4 flex items-center justify-center">
+          <div className="animate-spin h-8 w-8 border-4 border-t-transparent border-blue-600 rounded-full"></div>
+          <p className="ml-2 text-gray-500">جارٍ المعالجة...</p>
+        </div>
+      )}
+
+      {/* Show Watermarked Image */}
+      {watermarkedImage && !loading && (
+        <div className="mt-8 text-center">
+          <img
+            src={watermarkedImage}
+            alt="Watermarked Image"
+            className="w-96 h-96 object-cover border-4 border-gray-300 rounded-lg shadow-xl mb-6"
+          />
+          <button
+            onClick={downloadImage}
+            className="px-8 py-3 bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300"
+          >
+            تحميل الصورة
+          </button>
+        </div>
+      )}
 
       {/* Canvas element for logo addition */}
       <canvas ref={canvasRef} width={500} height={500} className="hidden" />
