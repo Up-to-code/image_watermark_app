@@ -82,7 +82,7 @@ const ImageWithLogoUpload = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
       <div className="max-w-screen-lg w-full text-center mb-8">
         <h1 className="text-4xl font-semibold text-gray-900 mb-6">
           أضف الشعار إلى الصورة
@@ -92,7 +92,7 @@ const ImageWithLogoUpload = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-screen-lg w-full">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-8 w-full">
         {/* Image Upload */}
         <div className="flex flex-col items-center w-full lg:w-1/2 mb-8">
           <label className="text-xl font-medium text-gray-700 mb-3">اختار صورة</label>
