@@ -60,7 +60,7 @@ const ImageWithLogoUpload = () => {
         const xPos = (canvas.width - logoWidth) / 2;
         const yPos = (canvas.height - logoHeight) / 2;
 
-        ctx.globalAlpha = 0.5; // Set logo opacity (50%)
+        ctx.globalAlpha = 0.1; // Set logo opacity (50%)
         ctx.drawImage(logoImg, xPos, yPos, logoWidth, logoHeight);
         setWatermarkedImage(canvas.toDataURL()); // Save the canvas image as base64
 
